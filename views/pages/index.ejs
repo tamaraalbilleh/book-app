@@ -29,8 +29,24 @@
     </header>
     <h2 class="h2">Saved Books</h2>
     <main>
-        <p> 0 Books In The Collection</p>
-        <section></section>
+        <p> <%= result.length %> Books In The Collection</p>
+        <section>
+            <% result.forEach (results=>{ %> 
+                <img src="<%= results.img %>" alt="">
+                <h2><%= results.title %> </h2>
+                <h3><%= results.author %> </h3>
+                <p><%= results.isbn%> </p>
+         <form action=<%=`/books/${results.id}`%> method="POST">
+        <input type="hidden" value="<%= results.img %> " name="img">
+        <input type="hidden" value="<%= results.title %> " name="title">
+        <input type="hidden" value="<%= results.author %> " name="author">
+        <input type="hidden" value="<%= results.isbn %> " name="isbn">
+        <input type="hidden" value="<%= results.description%>" name="description">
+        <input type="hidden" value="<%= results.bookshelf%>" name="bookshelf">
+        <button type="submit">View Details</button>
+        </form>
+        <% }) %> 
+        </section>
     </main>
     <footer>
         
