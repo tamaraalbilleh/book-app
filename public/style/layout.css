@@ -1,0 +1,39 @@
+header {
+    width: 100%;
+}
+main {
+    min-height: 530px;
+}
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.h2 {
+     width: 100%;
+}
+section {
+    width: 80%;
+    min-height: 500px;
+}
+section img {
+    width: 50%;
+}
+
+
+input[type="text"], input[type="radio"],input[type="submit"] {
+    display: block;
+}
+input[type="radio"] {
+    float: left;
+}
+input[type="text"] {
+    width: 70%;
+}
+input[type="submit"] {
+    width: 80%;
+}
+form {
+    display: grid;
+    grid-template-rows: 30% 10% 10% 10% 10% 30%;
+}

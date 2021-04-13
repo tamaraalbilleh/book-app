@@ -1,3 +1,18 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
+*  { box-sizing: border-box;
+}
 body {
-    background-color: blue;
+    background-color: #9b9b9b;
+}
+/* for mobile */
+@media only screen and (max-width: 767px) {
+    body {
+        margin: auto;
+        align-items: center;
+        
+    }
+
+
+
 }

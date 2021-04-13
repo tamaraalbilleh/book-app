@@ -1,0 +1,115 @@
+header {
+    background-color:#000000 ;
+    padding: 30px;
+    color : #eeebdd;
+}
+h1 {
+    text-align: center;
+}
+.h2 {
+    text-align: center;
+    background-color: #4a4a4a;
+    color: #eeebdd;
+    padding: 20px;
+}
+ul {
+    text-align: right;
+}
+a {
+    text-decoration: none;
+    color:  #eeebdd;
+    align-self: right;
+}
+footer {
+    background-color: #000000;
+    padding: 20px;
+    color : #eeebdd;
+
+}
+main {
+ color: #1b1717;
+ padding: 20px ;
+ align-items: center;
+ margin: auto;
+}
+section {
+    background-color: #d8d8d8;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+}
+section img {
+    border: 2px solid rgba(0, 0, 0, 0.521);
+    box-shadow:2px 2px 2px rgba(0, 0, 0, 0.705);
+}
+section h2 {
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+section h3 {
+    font-size: 20px;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.856);
+    margin-bottom: 7px;
+}
+
+input[type="text"], input[type="radio"],input[type="submit"] {
+   padding: 20px;
+}
+form {
+margin:20px auto 0px;  
+ 
+}
+input[type="text"] {
+    margin-bottom: 10px;
+}
+input[type="radio"]{
+    margin-bottom: 10px;
+
+}
+input[type="submit"]{
+    margin-top: 10px;
+}
+ /* for menu  */
+ .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  
+  .topnav #myLinks {
+    display: none;
+  }
+  
+  
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  
+  
+  .topnav a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+
+  .active {
+    background-color: #4CAF50;
+    color: white;
+  }

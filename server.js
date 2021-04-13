@@ -10,9 +10,10 @@ server.use('/public', express.static('public'));
 
 
 
-
+server.get ('/',homeHandler);
 server.get ('/hello', testHandler);
 server.get ('/searches/new', newSearchHandler);
+server.post ('/searches', searchesHandler);
 
 function testHandler (req,res){
   res.render ('pages/index');
@@ -21,8 +22,9 @@ function newSearchHandler (req,res) {
   res.render('pages/searches/new');
 }
 
-
-server.post ('/searches', searchesHandler);
+function homeHandler (req,res){
+  res.render ('pages/index');
+}
 // https://www.googleapis.com/books/v1/volumes?q=inauthor:cat
 function searchesHandler (req,res){
   console.log (req.body);
@@ -61,19 +63,15 @@ function Book (bookData){
   }
   this.title = bookData.volumeInfo.title;
   this.author = bookData.volumeInfo.authors;
-  this.description=bookData.volumeInfo.description;
+  this.description=bookData.volumeInfo.description || 'no description available';
 
 }
 
-// remember post
 
 // error
 server.get ('*',errorHandler);
 function errorHandler (req,res){
-  let errorObject = {
-    status: 500,
-    responseText : 'Sorry, something went wrong , ...'
-  };
-  res.status(500).send (errorObject);
+  let errorArray = ['status: 500',' Sorry, something went wrong , ...'];
+  res.status(500).render ( 'pages/error',{errorMessage:errorArray});
 }
 
