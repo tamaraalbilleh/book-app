@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Search Result</title>
+    <link rel="stylesheet" href="../public/style/reset.css">
+    <link rel="stylesheet" href="../public/style/base.css">
+    <link rel="stylesheet" href="../public/style/layout.css">
+    <link rel="stylesheet" href="../public/style/modules.css">
 </head>
+
 <body>
-    <h2>Search Result</h2>
+    <header>
+        <h1>Best Books !</h1>
+        <div class="topnav">
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+            <div id="myLinks">
+            <a href="./searches/new">Search for books</a>
+            <a href="./">Home</a>
+        </div>
+            
+    </div>
+    </header>
+    <h2 class="h2">Search Result</h2>
+    <main>
     <% search.forEach(item => { %>
         <section> 
             <img src="<%= item.img %> " alt="">
@@ -16,5 +36,23 @@
             <p><%= item.description%></p>   
         </section>
     <%  }); %>
+
+</main>
+    <footer>
+        
+        <a href="#">
+            <i class="far fa-envelope"></i>
+        </a>
+        <a href="#">
+            <i class="fab fa-twitter-square"></i>
+        </a>
+        <a href="#">
+            <i class="fab fa-github-square"></i>
+        </a>
+        <a href="#">
+            <i class="fab fa-linkedin"></i>
+        </a>
+    </footer>
+    <script src="../public/style/menu.js"></script>
 </body>
 </html>

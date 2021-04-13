@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../public/style/reset.css">
-    <link rel="stylesheet" href="../public/style/base.css">
-
+    <title>Home Page</title>
+    <link rel="stylesheet" href="./public/style/reset.css">
+    <link rel="stylesheet" href="./public/style/base.css">
+    <link rel="stylesheet" href="./public/style/layout.css">
+    <link rel="stylesheet" href="./public/style/modules.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-    <h1>HELLO WORLD !! </h1>
 
-    
+<body>
+    <header>
+        <h1>Best Books !</h1>
+        <div class="topnav">
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+            <div id="myLinks">
+                <a href="./searches/new">Search for books</a>
+            </div>
+            
+        </div>
+
+    </header>
+    <h2 class="h2">Saved Books</h2>
+    <main>
+        <p> 0 Books In The Collection</p>
+        <section></section>
+    </main>
+    <footer>
+        
+        <a href="#">
+            <i class="far fa-envelope"></i>
+        </a>
+        <a href="#">
+            <i class="fab fa-twitter-square"></i>
+        </a>
+        <a href="#">
+            <i class="fab fa-github-square"></i>
+        </a>
+        <a href="#">
+            <i class="fab fa-linkedin"></i>
+        </a>
+    </footer>
+    <script src="./public/style/menu.js"></script>
 </body>
 </html>

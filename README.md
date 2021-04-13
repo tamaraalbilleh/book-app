@@ -1,42 +1,28 @@
-# book-app
-Number and name of feature: ________________________________
-
-Estimate of time needed to complete: _____
-
-Start time: _____
-
-Finish time: _____
-
-Actual time needed to complete: _____
-Number and name of feature: ________________________________
-
-Estimate of time needed to complete: _____
-
-Start time: _____
-
-Finish time: _____
-
-Actual time needed to complete: _____
-Number and name of feature: ________________________________
-
-Estimate of time needed to complete: _____
-
-Start time: _____
-
-Finish time: _____
-
-Actual time needed to complete: _____
-Number and name of feature: ________________________________
-
-Estimate of time needed to complete: _____
-
-Start time: _____
-
-Finish time: _____
-
-Actual time needed to complete: _____
-
 # Book app
+
+## Number and name of feature: 1. repo set-up
+* Estimate of time needed to complete: 2 hours
+* Start time: 3:00 pm 
+* Finish time: 5:00 pm
+* Actual time needed to complete: 2 hours
+
+## Number and name of feature: 2. API data import
+* Estimate of time needed to complete: 3 hours
+* Start time: 5:00 pm 
+* Finish time: 9:00 pm
+* Actual time needed to complete: 4 hours
+
+## Number and name of feature: 3. Heroku deployment
+* Estimate of time needed to complete: 1 hour
+* Start time: 9:00 pm 
+* Finish time: 9:30 pm
+* Actual time needed to complete: half an hour
+
+## Number and name of feature: 4. styling
+* Estimate of time needed to complete: 2 hours
+* Start time: 9:30 pm 
+* Finish time: 12:00 pm
+* Actual time needed to complete: 2:30 hours
 
 **Author**: Tamara albilleh
 **Version**: 1.0.0 
@@ -47,6 +33,7 @@ this app finds books by title search or author name search
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code 301 class. (i.e. What's your problem domain?) -->
 
 ## Getting Started
+navigate to search page , choose the method of search , enter search word , hit submit and you'll see the results automatically .
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 
 ## Architecture
@@ -61,4 +48,3 @@ this app uses js , html , css ,ejs and express server
 
 ## Credits and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
--->
