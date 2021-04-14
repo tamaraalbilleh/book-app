@@ -1,5 +1,6 @@
 # Book app
-
+[Live App]()
+> lab 11
 ## Number and name of feature: 1. repo set-up
 * Estimate of time needed to complete: 2 hours
 * Start time: 3:00 pm 
@@ -23,6 +24,38 @@
 * Start time: 9:30 pm 
 * Finish time: 12:00 pm
 * Actual time needed to complete: 2:30 hours
+***
+> lab 12
+## Number and name of feature: 1.  saved books displayed on the home 
+* Estimate of time needed to complete: 2 hours
+* Start time: 3:00 pm 
+* Finish time: 5:00 pm
+* Actual time needed to complete: 2 hours
+
+## Number and name of feature: 2. request more information about a single book
+* Estimate of time needed to complete: 3 hours
+* Start time: 5:00 pm 
+* Finish time: 9:00 pm
+* Actual time needed to complete: 4 hours
+
+## Number and name of feature: 3. ability to add new books to my application 
+* Estimate of time needed to complete: 1 hour
+* Start time: 9:00 pm 
+* Finish time: 9:30 pm
+* Actual time needed to complete: half an hour
+
+## Number and name of feature: 4.  consistent design
+* Estimate of time needed to complete: 2 hours
+* Start time: 9:30 pm 
+* Finish time: 12:00 pm
+* Actual time needed to complete: 2:30 hours
+
+## Number and name of feature: 5.  clean-looking UI
+* Estimate of time needed to complete: 2 hours
+* Start time: 9:30 pm 
+* Finish time: 12:00 pm
+* Actual time needed to complete: 2:30 hours
+***
 
 **Author**: Tamara albilleh
 **Version**: 1.0.0 

@@ -2,9 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%-include('../layout/head')%>
     <title>Home Page</title>
     <link rel="stylesheet" href="./public/style/reset.css">
     <link rel="stylesheet" href="./public/style/base.css">
@@ -14,39 +12,24 @@
 </head>
 
 <body>
-    <header>
-        <h1>Best Books !</h1>
-        <div class="topnav">
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
-            <div id="myLinks">
-                <a href="./searches/new">Search for books</a>
-            </div>
-            
-        </div>
-
-    </header>
+    <%-include('../layout/header')%>
     <h2 class="h2">Saved Books</h2>
     <main>
-        <p> 0 Books In The Collection</p>
-        <section></section>
+        <p> <%= result.length %> Books In The Collection</p>
+        <section>
+            <% result.forEach (results=>{ %> 
+                <img src="<%= results.img %>" alt="">
+                <h2><%= results.title %> </h2>
+                <h3><%= results.author %> </h3>
+                <p><%= results.isbn%> </p>
+         <form action=<%=`/books/${results.id}`%> method="POST">
+      
+        <button type="submit">View Details</button>
+        </form>
+        <% }) %> 
+        </section>
     </main>
-    <footer>
-        
-        <a href="#">
-            <i class="far fa-envelope"></i>
-        </a>
-        <a href="#">
-            <i class="fab fa-twitter-square"></i>
-        </a>
-        <a href="#">
-            <i class="fab fa-github-square"></i>
-        </a>
-        <a href="#">
-            <i class="fab fa-linkedin"></i>
-        </a>
-    </footer>
+    <%-include('../layout/footer')%>
     <script src="./public/style/menu.js"></script>
 </body>
 </html>
