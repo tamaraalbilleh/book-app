@@ -57,7 +57,7 @@ section h3 {
     margin-bottom: 7px;
 }
 
-input[type="text"], input[type="radio"],input[type="submit"] {
+input[type="text"], input[type="radio"] {
    padding: 20px;
 }
 form {
@@ -71,9 +71,7 @@ input[type="radio"]{
     margin-bottom: 10px;
 
 }
-input[type="submit"]{
-    margin-top: 10px;
-}
+
  /* for menu  */
  .topnav {
     overflow: hidden;
@@ -113,3 +111,8 @@ input[type="submit"]{
     background-color: #4CAF50;
     color: white;
   }
+.delete {
+    height: 20px;
+    width: 100px ;
+    margin: auto;
+}

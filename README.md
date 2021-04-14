@@ -56,6 +56,19 @@
 * Finish time: 12:00 pm
 * Actual time needed to complete: 2:30 hours
 ***
+> lab 12
+## Number and name of feature: 1.  update the details of a book 
+* Estimate of time needed to complete: 2 hours
+* Start time: 3:45 pm 
+* Finish time: 5:43 pm
+* Actual time needed to complete: 2 hours
+
+## Number and name of feature: 2. remove books from my collection
+* Estimate of time needed to complete: 2 hours
+* Start time:  5:45 pm
+* Finish time: 6:00 pm 
+* Actual time needed to complete: 1 hour
+***
 
 **Author**: Tamara albilleh
 **Version**: 1.0.0 

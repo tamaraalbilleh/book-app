@@ -21,7 +21,7 @@ section img {
 }
 
 
-input[type="text"], input[type="radio"],input[type="submit"] {
+input[type="text"], input[type="radio"] {
     display: block;
 }
 input[type="radio"] {
@@ -30,9 +30,7 @@ input[type="radio"] {
 input[type="text"] {
     width: 70%;
 }
-input[type="submit"] {
-    width: 80%;
-}
+
 form {
     display: grid;
     grid-template-rows: 30% 10% 10% 10% 10% 30%;
