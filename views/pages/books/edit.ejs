@@ -1,0 +1,15 @@
+<section id="updateSection">
+    <p>Type in Here To Edit</p>
+    <form action="/books/<%= item.id%>?_method=PUT" method="POST">
+        <input type="text" value="<%= item.img %> " name="img">
+        <input type="text" value="<%= item.title %> " name="title">
+        <input type="text" value="<%= item.author %> " name="author">
+        <input type="text" value="<%= item.isbn %> " name="isbn">
+        <input type="text" value="<%= item.description%>" name="description">
+        <input type="text" value="<%= item.bookshelf%>" name="bookshelf">
+        <button type="submit">Update</button>
+    </form>
+</section>
+<form action="/books/<%= item.id%>?_method=DELETE"method="POST" >
+    <button class="delete" type="submit">Delete Book</button>
+</form>

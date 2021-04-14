@@ -10,11 +10,12 @@ server.set ('view engine','ejs');
 server.use('/public', express.static('public'));
 const client = new pg.Client( {
   connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized : false
-  }
+  // ssl: {
+  //   rejectUnauthorized : false
+  // }
 });
-
+const methodOverride =require('method-override');
+server.use (methodOverride('_method'));
 
 server.get ('/',homeHandler);
 server.get ('/hello', testHandler);
@@ -23,6 +24,8 @@ server.post ('/searches', searchesHandler);
 server.get ('/books/:id', detailsHandler);
 // server.get ('/books',backHandler);
 server.post ('/books',selectHandler);
+server.put ('/books/:id', updateHandler);
+server.delete ('/books/:id', deleteHandler);
 
 function testHandler (req,res){
   res.render ('pages/index');
@@ -138,4 +141,18 @@ function selectHandler (req, res){
     console.log (result.rows);
     res.redirect(`/books/${result.rows[0].id}`);
   });
+}
+
+function updateHandler (req, res){
+  let SQL = `UPDATE books SET title=$1, author=$2, img=$3, description=$4,isbn=$5,bookshelf=$6 WHERE id=$7;`;
+  let safeValues = [req.body.title,req.body.author,req.body.img,req.body.description,req.body.isbn,req.body.bookshelf,req.params.id];
+  client.query (SQL,safeValues).then (()=>{
+    res.redirect (`/books/${req.params.id}`);
+  });
+
+}
+function deleteHandler (req,res){
+  let SQL = `DELETE FROM books WHERE id=$1;`;
+  let safeValues= [req.params.id];
+  client.query (SQL,safeValues).then (res.redirect ('/'));
 }
