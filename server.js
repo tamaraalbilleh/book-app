@@ -10,9 +10,9 @@ server.set ('view engine','ejs');
 server.use('/public', express.static('public'));
 const client = new pg.Client( {
   connectionString: process.env.DATABASE_URL,
-  // ssl: {
-  //   rejectUnauthorized : false
-  // }
+  ssl: {
+    rejectUnauthorized : false
+  }
 });
 
 
@@ -21,6 +21,8 @@ server.get ('/hello', testHandler);
 server.get ('/searches/new', newSearchHandler);
 server.post ('/searches', searchesHandler);
 server.post ('/books/:id', detailsHandler);
+server.post ('/books',selectHandler);
+
 function testHandler (req,res){
   res.render ('pages/index');
 }
@@ -30,8 +32,7 @@ function newSearchHandler (req,res) {
 function homeHandler (req,res){
   let SQL = `SELECT * FROM books`;
   client.query(SQL).then(items=>{
-    // console.log(result.rows)
-    console.log( items.rows);
+
     res.render ('pages/index', {result:items.rows,count:items.rowsCount} );
   });
 }
@@ -53,7 +54,7 @@ function searchesHandler (req,res){
       let books = data.map(item => {
         return new Book (item);
       });
-      console.log (books);
+      // console.log (books);
       res.render ( 'pages/searches/show', { search:books});
     })
     .catch (error=>{
@@ -84,7 +85,7 @@ function Book (bookData){
   }else {
     this.bookshelf = bookData.volumeInfo.categories;
   }
-  
+
 }
 
 
@@ -95,7 +96,21 @@ function errorHandler (req,res){
   res.status(500).render ( 'pages/error',{errorMessage:errorArray});
 }
 
-// test 
 function detailsHandler (req, res){
-  console.log (req.params)
+  // console.log (req.params);
+  let SQL = `SELECT * FROM books WHERE id=$1;`;
+  let safe = req.params.id;
+  client.query (SQL,[safe]).then (result=>{
+    res.render ('pages/books/show',{item:result.rows[0] } );
+  });
+}
+
+function selectHandler (req, res){
+  console.log (req.body);
+  let SQL = `INSERT INTO books (title, author, img, description,isbn,bookshelf) VALUES($1,$2,$3,$4,$5,$6) RETURNING *;`;
+  let safeValues = [req.body.title,req.body.author,req.body.img,req.body.description,req.body.isbn,req.body.bookshelf];
+  client.query (SQL,safeValues).then (result=>{
+    console.log (result.rows);
+    res.redirect('/');
+  });
 }
