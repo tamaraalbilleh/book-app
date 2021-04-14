@@ -22,7 +22,7 @@
                 <h2><%= results.title %> </h2>
                 <h3><%= results.author %> </h3>
                 <p><%= results.isbn%> </p>
-         <form action=<%=`/books/${results.id}`%> method="POST">
+         <form action=<%=`/books/${results.id}`%> method="GET">
       
         <button type="submit">View Details</button>
         </form>

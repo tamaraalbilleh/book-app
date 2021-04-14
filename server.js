@@ -10,9 +10,9 @@ server.set ('view engine','ejs');
 server.use('/public', express.static('public'));
 const client = new pg.Client( {
   connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized : false
-  }
+  // ssl: {
+  //   rejectUnauthorized : false
+  // }
 });
 
 
@@ -20,7 +20,8 @@ server.get ('/',homeHandler);
 server.get ('/hello', testHandler);
 server.get ('/searches/new', newSearchHandler);
 server.post ('/searches', searchesHandler);
-server.post ('/books/:id', detailsHandler);
+server.get ('/books/:id', detailsHandler);
+// server.get ('/books',backHandler);
 server.post ('/books',selectHandler);
 
 function testHandler (req,res){
@@ -76,10 +77,32 @@ function Book (bookData){
   else {
     this.img= bookData.volumeInfo.imageLinks.thumbnail;
   }
-  this.title = bookData.volumeInfo.title;
-  this.author = bookData.volumeInfo.authors;
-  this.description=bookData.volumeInfo.description || 'no description available';
-  this.isbn = bookData.volumeInfo.industryIdentifiers[0].identifier;
+
+  if (!bookData.volumeInfo.title) {
+    this.title = 'no title available';
+  }else {
+    this.title = bookData.volumeInfo.title ;
+  }
+
+  if (!bookData.volumeInfo.authors) {
+    this.author = 'no author available';
+  }else {
+    this.author = bookData.volumeInfo.authors;
+  }
+
+  if (!bookData.volumeInfo.description) {
+    this.description='no description available';
+  }else {
+    this.description=bookData.volumeInfo.description ;
+  }
+
+  if (!bookData.volumeInfo.description) {
+    this.description='no description available';
+  }else {
+    this.description=bookData.volumeInfo.description ;
+  }
+  this.isbn = bookData.volumeInfo.industryIdentifiers[0].identifier || 'Not Available';
+
   if (! bookData.volumeInfo.description ){
     this.bookshelf = 'Not available';
   }else {
@@ -104,6 +127,9 @@ function detailsHandler (req, res){
     res.render ('pages/books/show',{item:result.rows[0] } );
   });
 }
+// function backHandler (req,res){
+//   res.redirect('back');
+// }
 
 function selectHandler (req, res){
   console.log (req.body);
@@ -111,6 +137,6 @@ function selectHandler (req, res){
   let safeValues = [req.body.title,req.body.author,req.body.img,req.body.description,req.body.isbn,req.body.bookshelf];
   client.query (SQL,safeValues).then (result=>{
     console.log (result.rows);
-    res.redirect('/');
+    res.redirect(`/books/${result.rows[0].id}`);
   });
 }

@@ -20,7 +20,6 @@
             <h2><%= item.title %> </h2>
             <h3><%= item.author %> </h3>
             <p><%= item.isbn %> </p>
-            <p><%= item.description%></p>
             <form action="/books" method="POST">
                 <input type="hidden" value="<%= item.img %> " name="img">
                 <input type="hidden" value="<%= item.title %> " name="title">
@@ -28,6 +27,7 @@
                 <input type="hidden" value="<%= item.isbn %> " name="isbn">
                 <input type="hidden" value="<%= item.description%>" name="description">
                 <input type="hidden" value="<%= item.bookshelf%>" name="bookshelf">
+                <input type="hidden" value="<%= item.id%>" name="id">
                 <button type="submit">Select This Book</button>
             </form>   
         </section>
