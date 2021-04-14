@@ -51,7 +51,7 @@ function searchesHandler (req,res){
   let url = `https://www.googleapis.com/books/v1/volumes?q=in${searchType}:${searchWord}&maxResults=10`;
   superagent.get (url)
     .then (bookData=>{
-      let data = bookData.body.items;
+      let data = bookData.body.items ;// || bookData.body || bookData;
       let books = data.map(item => {
         return new Book (item);
       });
@@ -96,14 +96,13 @@ function Book (bookData){
     this.description=bookData.volumeInfo.description ;
   }
 
-  if (!bookData.volumeInfo.description) {
-    this.description='no description available';
+  if (!bookData.volumeInfo.industryIdentifiers) {
+    this.isbn='no ISBN available';
   }else {
-    this.description=bookData.volumeInfo.description ;
+    this.isbn = bookData.volumeInfo.industryIdentifiers[0].identifier || bookData.volumeInfo.industryIdentifiers;
   }
-  this.isbn = bookData.volumeInfo.industryIdentifiers[0].identifier || 'Not Available';
 
-  if (! bookData.volumeInfo.description ){
+  if (! bookData.volumeInfo.categories ){
     this.bookshelf = 'Not available';
   }else {
     this.bookshelf = bookData.volumeInfo.categories;
